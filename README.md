@@ -7,8 +7,8 @@ A [Kenneth Reitz](http://kennethreitz.org/bitcoin) Project.
 
 Run locally:
 ```sh
-docker pull kennethreitz/httpbin
-docker run -p 80:80 kennethreitz/httpbin
+docker pull fatihbaltaci/httpbin
+docker run -p 80:80 fatihbaltaci/httpbin
 ```
 
 See http://httpbin.org for more information.
@@ -25,7 +25,3 @@ See http://httpbin.org for more information.
 - http://requestb.in
 - http://python-requests.org
 - https://grpcb.in/
-
-## Build Status
-
-[![Build Status](https://travis-ci.org/requests/httpbin.svg?branch=master)](https://travis-ci.org/requests/httpbin)

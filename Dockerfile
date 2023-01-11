@@ -1,21 +1,16 @@
-FROM ubuntu:18.04
+FROM python:3.9.10-slim
 
-LABEL name="httpbin"
-LABEL version="0.9.2"
-LABEL description="A simple HTTP service."
-LABEL org.kennethreitz.vendor="Kenneth Reitz"
-
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
 
-RUN apt update -y && apt install python3-pip git -y && pip3 install --no-cache-dir pipenv
+COPY ./requirements.txt .
+RUN pip --no-cache-dir install -r requirements.txt
 
-ADD Pipfile Pipfile.lock /httpbin/
-WORKDIR /httpbin
-RUN /bin/bash -c "pip3 install --no-cache-dir -r <(pipenv lock -r)"
+WORKDIR /workspace
 
-ADD . /httpbin
-RUN pip3 install --no-cache-dir /httpbin
+COPY . /workspace
 
 EXPOSE 80
 
