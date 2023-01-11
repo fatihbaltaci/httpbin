@@ -3,6 +3,8 @@
 
 A [Kenneth Reitz](http://kennethreitz.org/bitcoin) Project.
 
+Minimal-sized httpbin for amd64 and arm64 architectures.
+
 ## Run locally:
 ```bash
 docker run -p 80:80 fatihbaltaci/httpbin
